@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Import_Email"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{DA24F0EA-2DB5-4203-A249-60E8DCED1060}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{ABCEC63E-4C9B-42C0-AD39-6B35B2C7807C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWZI+5wJt/UCC+qHBKRmizAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAwuIEiYaHJlO9iCB9mYOcGjK4Qo0k0kZ8AIeDhl6+S4gAAAAAOgAAAAAIAACAAAAAvl1HIvXHgFfrYzbzZgornLUWmhatqgnyU1gbDdNLJvyAAAADJNUD5aea+PRlpm1Zciaf8gq1UwoT7f224zhll67/SIUAAAADUoxYiqDNpUatGciCEB5oBerd/RmM9TvB+O7WcFQCc2psd+j8TVCPNJ6iRyHYcE+Pe51AQ+gkhpvZW5oRunDVA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWZI+5wJt/UCC+qHBKRmizAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAVunM7GIpZoOJJKecCqcbuH5rZHJHp7iTk7vqLGNe0BwAAAAAOgAAAAAIAACAAAABP2AsKHVkmR/TVoS0nyvBOivF/R05nv2gWZnzV0SXAHSAAAAAlc7avn2klTrDDKoE536FX7ABhm1Nbet8DmXxuzJTjUEAAAADopu0mtMU3lwQXjFd+DFVdaB8hpr/AZ8I62qwhvrfG9ZqGOdh2x1IbridAc1bAXxxh+YERlvRqZf6xDyYTS4Kb</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -38,12 +38,29 @@
       DTS:ObjectName="Excel Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\siuming\Desktop\Email_180510_Sandy.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=NO&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\siuming\Desktop\SendEmail\6-month Notification Emails_20180625.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=NO&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F634B426-AE18-4408-9A64-172275130814}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{79CA3822-256A-4885-8B85-1DF93222EC6B}"
+          SQLTask:SqlStatementSource="truncate table tbl_addr_mailinglists" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Import_Email"
       DTS:CreationName="Microsoft.Pipeline"
@@ -74,7 +91,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">Email_180510_10694_Sandy$</property>
+                  name="OpenRowset">'FBOTerm_201805_Level1-$'</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -113,78 +130,22 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].Columns[F1]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].ExternalColumns[F1]"
+                      length="50"
                       lineageId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].Columns[F1]"
                       name="F1"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].Columns[F2]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].ExternalColumns[F2]"
-                      lineageId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].Columns[F2]"
-                      name="F2"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].Columns[F3]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].ExternalColumns[F3]"
-                      length="255"
-                      lineageId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].Columns[F3]"
-                      name="F3"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].Columns[F4]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].ExternalColumns[F4]"
-                      length="255"
-                      lineageId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].Columns[F4]"
-                      name="F4"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].Columns[F5]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].ExternalColumns[F5]"
-                      length="255"
-                      lineageId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].Columns[F5]"
-                      name="F5"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].ExternalColumns[F1]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="F1" />
-                    <externalMetadataColumn
-                      refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].ExternalColumns[F2]"
-                      dataType="r8"
-                      name="F2" />
-                    <externalMetadataColumn
-                      refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].ExternalColumns[F3]"
-                      dataType="wstr"
-                      length="255"
-                      name="F3" />
-                    <externalMetadataColumn
-                      refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].ExternalColumns[F4]"
-                      dataType="wstr"
-                      length="255"
-                      name="F4" />
-                    <externalMetadataColumn
-                      refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].ExternalColumns[F5]"
-                      dataType="wstr"
-                      length="255"
-                      name="F5" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -194,32 +155,10 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Error Output].Columns[F1]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Import_Email\FBO_Email.Outputs[Excel Source Error Output].Columns[F1]"
                       name="F1" />
-                    <outputColumn
-                      refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Error Output].Columns[F2]"
-                      dataType="r8"
-                      lineageId="Package\Import_Email\FBO_Email.Outputs[Excel Source Error Output].Columns[F2]"
-                      name="F2" />
-                    <outputColumn
-                      refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Error Output].Columns[F3]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Import_Email\FBO_Email.Outputs[Excel Source Error Output].Columns[F3]"
-                      name="F3" />
-                    <outputColumn
-                      refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Error Output].Columns[F4]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Import_Email\FBO_Email.Outputs[Excel Source Error Output].Columns[F4]"
-                      name="F4" />
-                    <outputColumn
-                      refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Error Output].Columns[F5]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Import_Email\FBO_Email.Outputs[Excel Source Error Output].Columns[F5]"
-                      name="F5" />
                     <outputColumn
                       refId="Package\Import_Email\FBO_Email.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -253,7 +192,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[tblmailinglists]</property>
+                  name="OpenRowset">[dbo].[tbl_addr_mailinglists]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -275,7 +214,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -310,12 +249,12 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Import_Email\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F5]"
+                      refId="Package\Import_Email\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F1]"
                       cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="F5"
+                      cachedLength="50"
+                      cachedName="F1"
                       externalMetadataColumnId="Package\Import_Email\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
-                      lineageId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].Columns[F5]" />
+                      lineageId="Package\Import_Email\FBO_Email.Outputs[Excel Source Output].Columns[F1]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -324,25 +263,6 @@
                       dataType="wstr"
                       length="255"
                       name="email" />
-                    <externalMetadataColumn
-                      refId="Package\Import_Email\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fname]"
-                      dataType="wstr"
-                      length="255"
-                      name="Fname" />
-                    <externalMetadataColumn
-                      refId="Package\Import_Email\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lname]"
-                      dataType="wstr"
-                      length="255"
-                      name="Lname" />
-                    <externalMetadataColumn
-                      refId="Package\Import_Email\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[company]"
-                      dataType="wstr"
-                      length="255"
-                      name="company" />
-                    <externalMetadataColumn
-                      refId="Package\Import_Email\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pk]"
-                      dataType="i4"
-                      name="pk" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -383,6 +303,16 @@
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{04EC80D6-494E-472A-9C45-9C6F1EC2D12B}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import_Email" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -394,11 +324,49 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="524,57" />
         <NodeLayout
           Size="142,42"
           Id="Package\Import_Email"
-          TopLeft="488.5,140.5" />
+          TopLeft="551.5,205.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="605.5,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17,106.5"
+              Start="0,0"
+              End="17,99">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.25"
+                    Point2="0,53.25"
+                    Point3="4,53.25" />
+                  <mssgle:LineSegment
+                    End="13,53.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13,53.25"
+                    Point2="17,53.25"
+                    Point3="17,57.25" />
+                  <mssgle:LineSegment
+                    End="17,99" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>

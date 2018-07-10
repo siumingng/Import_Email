@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">WSFIHOME</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWZI+5wJt/UCC+qHBKRmizAAAAAACAAAAAAAQZgAAAAEAACAAAAAzezyYpg8OllT0cln+HEHKxbq5Vx/4BHN6i7WmTHgj1QAAAAAOgAAAAAIAACAAAABI+Zo4uKWAkKAakaimYYAuFr168UYL/U/eDJFwARyPr5AAAAD7CcE2fSq/O5cYX3byAY7jGQJrF5IkEAGxxRbzzP9/y0YdwG+h1o0D/y9dVCeKHsQbChSGUySL5qgAe83ytCoo98016ZJ9xAPnZZtvcirRlLhnjGfl50SDi+43w5DbykNmlqHL4bx609sC0eF9sbZB62l3ZZfJxidm9J6quLhoQ+R9HlbUDN5DPtyNBGI1mFdAAAAAboaJrZ+xNIXvJHrV+N+n8eWhaNhQgT+XQJG/GLQvmpUh3b/djJkcU70rPfCqSBY4zSPo+UC4n9O6dYU0WULjhQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWZI+5wJt/UCC+qHBKRmizAAAAAACAAAAAAAQZgAAAAEAACAAAACNERW1PoIEmkutquE3FvnVTeoyztKcHTv20mPBHymx/AAAAAAOgAAAAAIAACAAAABMsrxoYrrrwZnl/0Nydb5u97zGgF/KbOyD6rHYYPyoUpAAAADcV6iyGTPx1FoN4f9EzZ7sg5XzlyMQ3k9mECeYPw4mxBXL9o5C+oERRCSHINd8XkRG698rtDhpqgELKm8w45UBIrZhfioEWPzXGRMfb9rPrem6WRwSKp8yNwdRor1LXTW6MEceuJAlcOBcGLMksQFg7f/xiYJXbCEbFtu81S0aiv5rtkRDvoWvxKh6xpPoDtZAAAAAS8i1gLh7XnMvYbYx5L7k2uiIIhHKMS4U3Vz0/TcBEL8EKej83FzLiZzhkwoJ4zp7GbhVk6XOuq7kK50h/xJSRw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,10 +42,10 @@
                 <SSIS:Property SSIS:Name="Name">Import_Email</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">13</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{7AB5731F-FE85-4948-83DA-810E00C1833B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{ABCEC63E-4C9B-42C0-AD39-6B35B2C7807C}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -152,7 +152,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\siuming\Desktop\Email_180510_Sandy.xls;Extended Properties="Excel 12.0 XML;HDR=NO";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\siuming\Desktop\SendEmail\6-month Notification Emails_20180625.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=NO";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -167,7 +167,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\siuming\Desktop\Email_180510_Sandy.xls</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\siuming\Desktop\SendEmail\6-month Notification Emails_20180625.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -240,7 +240,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\siuming\Desktop\Email_180510_Sandy.xls</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\siuming\Desktop\SendEmail\6-month Notification Emails_20180625.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
